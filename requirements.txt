@@ -1,0 +1,19 @@
+The package requirements for the given Python program are:
+
+- requests (to make HTTP requests)
+- beautifulsoup4 (to parse HTML content)
+- transformers (to use the sentiment-analysis pipeline)
+
+To create a requirements.txt file, you can use the following command:
+
+```bash
+pip freeze > requirements.txt
+```
+
+This will generate a requirements.txt file containing all the installed packages in your Python environment. You can then install these packages using the "-r" flag:
+
+```bash
+pip install -r requirements.txt
+```
+
+Please note that you may need to manually remove any unnecessary packages from the requirements.txt file before sharing it with others.
