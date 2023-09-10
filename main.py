@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from transformers import pipeline
 
+
 class UserProfiling:
     def __init__(self, user_id):
         self.user_id = user_id
@@ -24,7 +25,8 @@ class TopicDiscovery:
         self.popular_topics = []
 
     def discover_popular_topics(self):
-        self.popular_topics = ['artificial intelligence', 'cryptocurrency', 'travel']
+        self.popular_topics = [
+            'artificial intelligence', 'cryptocurrency', 'travel']
 
 
 class ContentAnalyzer:
@@ -49,7 +51,8 @@ class ContentRecommendation:
     def generate_recommendations(self):
         for interest in self.user_profile.interests:
             if interest in self.content_analyzer.tags:
-                self.recommendations.append(f"Check out the latest news on {interest}")
+                self.recommendations.append(
+                    f"Check out the latest news on {interest}")
 
 
 class DataCollector:
@@ -91,7 +94,8 @@ class ExternalAPIIntegration:
             for item in data['items']:
                 video_title = item['snippet']['title']
                 video_url = f"https://www.youtube.com/watch?v={item['id']['videoId']}"
-                self.recommendations.append({'title': video_title, 'url': video_url})
+                self.recommendations.append(
+                    {'title': video_title, 'url': video_url})
 
 
 class RealTimeUpdater:
@@ -132,7 +136,8 @@ class RecommendationEngine:
         content_analyzer = ContentAnalyzer(topic_discovery.popular_topics)
         content_analyzer.analyze_content()
 
-        content_recommendation = ContentRecommendation(user_profiling, content_analyzer)
+        content_recommendation = ContentRecommendation(
+            user_profiling, content_analyzer)
         content_recommendation.generate_recommendations()
 
         return content_recommendation.recommendations
